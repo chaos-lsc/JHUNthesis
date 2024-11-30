@@ -193,30 +193,31 @@
 
         \begin{flushleft}
             % \sihao\songti 
-            \fontsize{14pt}{\baselineskip}\bf 二○二四 届学生毕业论文（设计）\hfill 存档编号：\uline{\makebox[9em]{\hfill}}
+            \fontsize{14pt}{\baselineskip}\bf 二〇二\quad 届学生毕业论文（设计）\hfill 存档编号：\uline{\makebox[4em]{\hfill}}
             \vskip 30bp
-            \includegraphics[width=0.5\textwidth]{jhun_mark.jpg}
+            \includegraphics[width=0.56\textwidth]{jhun_mark.jpg}
         \end{flushleft}
 
         \vskip 45bp
-        \centerline{\fontsize{48pt}{\baselineskip} {毕业论文（设计）}}
+        \centerline{\fontsize{48pt}{\baselineskip} { \hspace{1.1cm} 毕业论文（设计）}}
 
         \vskip 50bp
         \begin{center}
             \zihao{3}
             \begin{tabular}{rl}
-            题目:
-            &\underlineWithSpace[10cm]{基于\LaTeX 的江汉大学} 	\\
-            &\underlineWithSpace[10cm] {人工智能学院毕业论文模板}							\\[2cm]
-            &\makebox[4em][s]{学院}    \hspace{0.2cm}	\underlineWithSpace[5.5cm]{\sihao \zhtheschool} \\
-            &\makebox[4em][s]{专业}	\hspace{0.2cm}		\underlineWithSpace[5.5cm]{\sihao \zhthemajor}      \\
-            &\makebox[4em][s]{学生姓名}	\hspace{0.2cm}	\underlineWithSpace[5.5cm]{\sihao \zhtheauthor}   \\
-            % &\makebox[4em][s]{学号}	\hspace{0.2cm}	\underlineWithSpace[5.5cm]{20177740}   \\ 
-            &\makebox[4em][s]{指导教师}	\hspace{0.2cm}	\underlineWithSpace[5.5cm]{\sihao \zhtheadvisor}   \\
+                \quad \hspace{0.4cm}论\hspace{0.06cm}文\hspace{0.06cm}题\hspace{0.06cm}目
+            &\underlineWithSpace[9.5cm]{基于\LaTeX 的江汉大学} 	\\
+            \quad \hspace{0.4cm}(英 \quad \hspace{0.12cm} 文)  
+            &\underlineWithSpace[9.5cm] {人工智能学院毕业论文模板}							\\[1.46cm]
+            &\hspace{-0.6cm}\makebox[3.8em][s]{学院}    \hspace{0.2cm}	\underlineWithSpace[4.7cm]{\sihao \zhtheschool} \\[0.2cm] 
+            &\hspace{-0.6cm}\makebox[3.8em][s]{专业}	\hspace{0.2cm}		\underlineWithSpace[4.7cm]{\sihao \zhthemajor}      \\[0.2cm] 
+            &\hspace{-0.6cm}\makebox[3.8em][s]{姓名}	\hspace{0.2cm}	\underlineWithSpace[4.7cm]{\sihao \zhtheauthor}   \\[0.2cm] 
+            &\hspace{-0.6cm}\makebox[3.8em][s]{学号}	\hspace{0.2cm}	\underlineWithSpace[4.7cm]{20177740}   \\[0.2cm]  
+            &\hspace{-0.6cm}\makebox[3.8em][s]{指导教师}	\hspace{0.2cm}	\underlineWithSpace[4.7cm]{\sihao \zhtheadvisor}   \\
             \end{tabular}
         \end{center}
 
-        \vskip 60bp
+        \vskip 45bp
         \centerline{\fontsize{12pt}{12pt}\selectfont \thedatesubmit}
         \centerline{\sanhao \thedateconfer}
     \end{titlepage}
@@ -224,6 +225,14 @@
     \setcounter{page}{1}
     \setlength{\extrarowheight}{2pt}
 }
+
+
+
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%% table %%%%%%%%%%%%%%%%%%%
@@ -296,7 +305,7 @@
 
 \newcommand{\thedateoral}{}
 \newcommand{\thedatesubmit}{}
-\newcommand{\thedateconfer}{年\chinesespace 月}
+\newcommand{\thedateconfer}{\qquad \qquad \quad   年\chinesespace\chinesespace 月\chinesespace\chinesespace 日}
 
 \newcommand{\setdate}[2][]{
     \ifthenelse{\equal{#1}{oral}}{
