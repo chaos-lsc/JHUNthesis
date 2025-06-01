@@ -55,9 +55,13 @@
 \RequirePackage{tabularx, array}
 % booktabs提供了更专业的表格线条命令，如\toprule。
 \RequirePackage{booktabs}
+% 代码支持
+\usepackage{listings}
 
 % 引入setspace包，用于设置文档的行距。
 \RequirePackage{setspace}
+% % 引入everypage包，用于页面钩子
+% \RequirePackage{everypage}
 % 引入multirow包，支持在表格中跨行合并单元格。
 \RequirePackage{multirow}
 % 引入amsmath包，提供数学公式的扩展功能。
@@ -72,9 +76,6 @@
 
 % 下划线
 \RequirePackage{ulem}
-
-% 设置行距
-\RequirePackage{setspace}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%% font %%%%%%%%%%%%%%%%%%%
@@ -206,13 +207,13 @@
             \zihao{3}
             \begin{tabular}{rl}
                 \quad \hspace{0.4cm}论\hspace{0.06cm}文\hspace{0.06cm}题\hspace{0.06cm}目
-            &\underlineWithSpace[9.5cm]{基于\LaTeX 的江汉大学} 	\\
+            &\underlineWithSpace[9.5cm]{\sihao \zhthetitle} 	\\
             \quad \hspace{0.4cm}(英 \quad \hspace{0.12cm} 文)  
-            &\underlineWithSpace[9.5cm] {人工智能学院毕业论文模板}							\\[1.46cm]
+            &\underlineWithSpace[9.5cm] {\sihao \enthetitle}	\\[1.46cm]
             &\hspace{-0.6cm}\makebox[3.8em][s]{学院}    \hspace{0.2cm}	\underlineWithSpace[4.7cm]{\sihao \zhtheschool} \\[0.2cm] 
             &\hspace{-0.6cm}\makebox[3.8em][s]{专业}	\hspace{0.2cm}		\underlineWithSpace[4.7cm]{\sihao \zhthemajor}      \\[0.2cm] 
             &\hspace{-0.6cm}\makebox[3.8em][s]{姓名}	\hspace{0.2cm}	\underlineWithSpace[4.7cm]{\sihao \zhtheauthor}   \\[0.2cm] 
-            &\hspace{-0.6cm}\makebox[3.8em][s]{学号}	\hspace{0.2cm}	\underlineWithSpace[4.7cm]{20177740}   \\[0.2cm]  
+            &\hspace{-0.6cm}\makebox[3.8em][s]{学号}	\hspace{0.2cm}	\underlineWithSpace[4.7cm]{\sihao \thestudentnumber}   \\[0.2cm]  
             &\hspace{-0.6cm}\makebox[3.8em][s]{指导教师}	\hspace{0.2cm}	\underlineWithSpace[4.7cm]{\sihao \zhtheadvisor}   \\
             \end{tabular}
         \end{center}
@@ -225,13 +226,6 @@
     \setcounter{page}{1}
     \setlength{\extrarowheight}{2pt}
 }
-
-
-
-
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -248,10 +242,12 @@
 
 \RequirePackage{graphicx}
 \graphicspath{{style/}}
-\RequirePackage{pifont} % “秘级”后的五角星
+\RequirePackage{pifont} % "秘级"后的五角星
 \RequirePackage{subfigure}
 
-% -------------- Infomation ------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%  Infomation %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\zhthetitle}{\chinesespace}
 \newcommand{\zhtheauthor}{\chinesespace}
@@ -317,4 +313,55 @@
     \ifthenelse{\equal{#1}{confer}}{
         \renewcommand{\thedateconfer}{#2}
     }{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%  Abstract %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 中文摘要
+\newenvironment{chineseabstract}{
+    \newpage
+
+    \centering{\heiti\zihao{3} 摘~~~~要}
+    \vspace*{10pt}
+    \par
+    \setlength{\parindent}{24pt}
+
+
+    % \pdfbookmark{中文摘要}{chineseabstract}
+    % \setcounter{pseudopage}{1}
+    % \chapter*{\heiti 摘\chinesespace 要}
+
+}{}
+
+
+% 英文摘要
+\newenvironment{englishabstract}{
+    \newpage
+    \vspace*{5pt} % 插入5pt的垂直间距
+    \centering{\bf\heiti\zihao{3} Abstract}  % 居中显示"Abstract"
+    \par % 结束当前段落
+    \vskip 10pt % 插入10pt的垂直间距
+    \noindent % 防止段落首行缩进
+    \setlength{\parindent}{24pt} % 设置段落首行缩进为24pt
+}{}
+
+\newcommand{\chineseKeyword}[1]{
+    % \vspace{\baselineskip}
+    % \noindent
+    % \@hangfrom{\makebox[48pt][l]{\textbf{关键词\chinesecolon}}}#1
+    \par\vspace{\baselineskip} % 使用 \par 来确保新段落开始  
+    \noindent\centering\textbf{
+        关键词 \chinesecolon \par
+        #1
+        }
+}
+
+\newcommand{\englishKeyword}[1]{
+    % \vspace{\baselineskip}
+    % \noindent
+    % \@hangfrom{\makebox[2.1cm][l]{\textbf{Keywords:}}}#1
+    \par\vspace{\baselineskip} % 使用 \par 来确保新段落开始  
+    \noindent\centering\textbf{Keywords:} #1
 }

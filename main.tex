@@ -4,26 +4,36 @@
 \documentclass{thesis-jhun}
 
 \title
-{基于x86架构的类Linux操作系统分析与设计}
-{Analysis and Design of Linux-Like Operating Systems Based on the x86 Architecture}
+{基于\LaTeX{}的江汉大学人工智能学院毕业论文模板}
+{A Thesis Template based on \LaTeX for the School of Artificial Intelligence, Jianghan University}
 
 \author{刘奭超}{ShiChao Liu}
-\advisor{李登实}{Dr. DengShi Li}
+\studentnumber{241226000000}
+\advisor{李登实 教授}{Dr. DengShi Li}
 \school{人工智能学院}{School of Artificial Intelligence}
 \major{计算机科学与技术}{Computer Science and Technology}
 
+\setlength{\headheight}{1cm}
 \begin{document}
 
-% 设置封面样式
 \maketitle
 
 
-\setcounter{page}{1}
-\setlength{\extrarowheight}{2pt}
+% \pagestyle{frontmatter}
+% \frontmatter
 
 % 设置正文样式
+\pagestyle{mainmatter}
+
+\input{chapter/abstract}
+\tableofcontents
+
+\mainmatter
+
 
 % 正文
-% \include{chapter/chapter1-intro}
+\include{chapter/chapter1-intro}
+\include{chapter/chapter2-config}
+% \include{chapter/chapter3-download}
 
 \end{document}
